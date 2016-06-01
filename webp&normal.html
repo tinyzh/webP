@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img src="" data-webP="http://o831kmplo.bkt.clouddn.com/1.webp" data-normal="http://o831kmplo.bkt.clouddn.com/1.jpg" class="js_optimize" width="100%">
+	<img src="" data-webP="http://o831kmplo.bkt.clouddn.com/2.webp" data-normal="http://o831kmplo.bkt.clouddn.com/2.jpg" class="js_optimize" width="100%">
+	<img src="" data-webP="http://o831kmplo.bkt.clouddn.com/3.webp" data-normal="http://o831kmplo.bkt.clouddn.com/3.jpg" class="js_optimize" width="100%">
+	<img src="" data-webP="http://o831kmplo.bkt.clouddn.com/4.webp" data-normal="http://o831kmplo.bkt.clouddn.com/4.jpg" class="js_optimize" width="100%">
+
+
+
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		
+		
+		
+				(function(){
+					var WebP = new Image();
+					WebP.onload = WebP.onerror = function(){
+			    		window.supportWebP = WebP.height == 1;
+					};
+					WebP.src = "data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoBAAEAAAAMJaQAA3AA/v89WAAAAA==";
+				})();
+					//change
+					window.onload = function(){
+						var $img = $('.js_optimize');
+						$img.each(function(index,elem){
+							changeImg(elem,supportWebP);
+						});
+						
+						function changeImg(obj,flag){
+							var $obj = $(obj),
+								webpUrl = $obj.data('webp'),
+								normalUrl = $obj.data('normal');
+							flag == true ? $obj.attr('src',webpUrl) : $obj.attr('src',normalUrl);
+						}
+					}
+					
+				
+
+			
+			
+		
+	
+		
+	
+
+	</script>
+</body>
+</html>
